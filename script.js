@@ -23,7 +23,22 @@ var churchillSpeech = {
 document.getElementById('BtnDonate').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Donate" button.
 
-  
+  var donate = window.prompt("How much would you like to donate?");
+
+  var myFirstTag = document.createElement('h3');
+
+  var lessThanGoal = document.createTextNode('Thank you for your donation of $45!');
+  var moreThanGoal = document.createTextNode('Thank you for your very generous donation!');
+
+  if (donate < 100) {
+    myFirstTag.appendChild(lessThanGoal);
+    SideNav.appendChild(myFirstTag);
+  } else if (donate >= 100) {
+    myFirstTag.appendChild(moreThanGoal);
+    SideNav.appendChild(myFirstTag).setAttribute;
+  }
+
+document.getElementByTagName ("h3").setAttribute
 });
 
 document.getElementById('BtnChurchill').addEventListener('click', function(){
