@@ -20,8 +20,9 @@ var churchillSpeech = {
     speechesArray = [churchillSpeech, ghandiSpeech, demosthenesSpeech],
     donatePrompt;
 
-    var allArticles = document.getElementByTagName("article");
-    
+    var allArticles = document.getElementsByTagName("article");
+    var myFirstTag = document.createElement('h3');
+
     function redHead () {
       for (var i = 0; i < allArticles.length; i++){
         allArticles[i].classList.add("generous-donation");
@@ -33,8 +34,6 @@ document.getElementById('BtnDonate').addEventListener('click', function(){
 
   var donate = window.prompt("How much would you like to donate?");
 
-  var myFirstTag = document.createElement('h3');
-
   var lessThanGoal = document.createTextNode('Thank you for your donation of $45!');
   var moreThanGoal = document.createTextNode('Thank you for your very generous donation!');
 
@@ -44,18 +43,14 @@ document.getElementById('BtnDonate').addEventListener('click', function(){
   } else if (donate >= 100) {
     myFirstTag.appendChild(moreThanGoal);
     SideNav.appendChild(myFirstTag);
-    moreThanGoal.setAttribute('style','color:red');
+    myFirstTag.setAttribute("style","color:red");
+    redHead();
   }
-
-
-//document.getElementByTagName(moreThanGoal).setAttribute('h3', 'color: "red"');
-//left off here trying to figure out how to get h3 to turn red and then need the last part of assignment!!!!!
 });
 
 document.getElementById('BtnChurchill').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Churchill" button.
 
-  //console.log('This speech was written by ' + speechesArray[0].author + ' in ' + speechesArray[0].year);
   document.getElementById('ConsoleDisplay').innerHTML += ("This speech was written by " + speechesArray[0].author + " in " + speechesArray[0].year + "." + "<br />");
 
   if(speechesArray[0].yearIsBCE === true){
