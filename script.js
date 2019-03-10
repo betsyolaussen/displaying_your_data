@@ -20,6 +20,14 @@ var churchillSpeech = {
     speechesArray = [churchillSpeech, ghandiSpeech, demosthenesSpeech],
     donatePrompt;
 
+    var allArticles = document.getElementByTagName("article");
+    
+    function redHead () {
+      for (var i = 0; i < allArticles.length; i++){
+        allArticles[i].classList.add("generous-donation");
+      }
+    }
+
 document.getElementById('BtnDonate').addEventListener('click', function(){
   //Code in here executes when the user clicks the "Donate" button.
 
@@ -35,10 +43,13 @@ document.getElementById('BtnDonate').addEventListener('click', function(){
     SideNav.appendChild(myFirstTag);
   } else if (donate >= 100) {
     myFirstTag.appendChild(moreThanGoal);
-    SideNav.appendChild(myFirstTag).setAttribute;
+    SideNav.appendChild(myFirstTag);
+    moreThanGoal.setAttribute('style','color:red');
   }
 
-document.getElementByTagName ("h3").setAttribute
+
+//document.getElementByTagName(moreThanGoal).setAttribute('h3', 'color: "red"');
+//left off here trying to figure out how to get h3 to turn red and then need the last part of assignment!!!!!
 });
 
 document.getElementById('BtnChurchill').addEventListener('click', function(){
